@@ -1,0 +1,17 @@
+.tree
+{
+    min-height: 40px;
+    border: 1px solid black;
+    overflow: auto;
+}
+
+.tree .label
+{
+    float: left;
+    width: 300px;
+}
+
+.tree .branches
+{
+    float: left;
+}

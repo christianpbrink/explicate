@@ -1,0 +1,56 @@
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="static/global.css"/>
+    <script type="text/javascript" src="static/explicate.js"></script>
+    <script type="text/javascript" src="static/underscore-min.js"></script>
+    <script type="text/javascript" src="static/jquery-1.11.1.min.js"></script>
+
+    <script type="text/javascript" >
+        $(document).ready(function() { 
+            var treeHtml = renderTree(demoTree);
+            console.log(treeHtml);
+            document.body.innerHTML += treeHtml;
+        });
+    </script>
+
+</head>
+
+<body>
+
+    <div class="tree">
+        <div class="label">p1</div> 
+        <div class="branches">
+            <div class="tree">
+                <div class="label">Claim 1</div>
+                <div class="branches">
+                    <div class="tree">
+                        <div class="label">Article 1</div>
+                    </div>
+                    <div class="tree">
+                        <div class="label">Article 2</div>
+                        <div class="branches">
+                            <div class="tree">
+                                <div class="label">Thingamajig</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tree">
+                <div class="label">Claim 2</div>
+                <div class="branches">
+                    <div class="tree">
+                        <div class="label">Article 1</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h1>Dynamically rendered...</h1>
+
+</body>
+
+</html>
