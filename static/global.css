@@ -1,8 +1,9 @@
 .tree
 {
-    min-height: 40px;
     border: 1px solid black;
     overflow: auto;
+    width: auto;
+    float: left;
 }
 
 .tree .label
@@ -14,4 +15,7 @@
 .tree .branches
 {
     float: left;
+    clear: left;
+    width: auto;
+}
 }
