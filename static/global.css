@@ -18,4 +18,11 @@
     clear: left;
     width: auto;
 }
+
+.focussed > .label {
+  background: #faa;
+}
+
+.focussed > .branches > .tree > .label {
+  background: #aaa;
 }

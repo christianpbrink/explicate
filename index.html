@@ -12,13 +12,13 @@
             var treeHtml = renderTree(demoTree);
             console.log(treeHtml);
             document.body.innerHTML += treeHtml;
+            changePos(0);
         });
     </script>
 
 </head>
 
-<body>
-
+<body onkeyup="keyHandler(event)">
 
 </body>
 
