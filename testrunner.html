@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <script type="text/javascript" src="http://searls.github.io/jasmine-all/jasmine-all-min.js"></script>
+        <script type="text/javascript" src="static/underscore-min.js"></script>
+
+        <script type="text/javascript" src="static/prelude.js"></script>
+        <script type="text/javascript" src="static/explicate.js"></script>
+    </head>
+    <body>
+        <script type="text/javascript">
+
+            var rootGreatgrandchildren = [ {id: 124, label: "I'm a *great*-grandchild", branches: [], parentID: 97} ];
+            var rootGrandchildren = [ {id: 97, label: "I'm a grandchild", branches: rootGreatgrandchildren, parentID: 55} ];
+            var rootChildren = [ {id: 55, label: "I'm the root's child", branches: rootGrandchildren, parentID: 1} ];
+            var root = {id: 1, label: "I'm the root", branches: rootChildren};
+
+            describe("treeForID", function() {
+                it("empty tree should return nothing", function() {
+                    expect(treeForID(1, {})).toBe('Nothing');
+                });
+                it("should get correct tree when present", function() {
+                    var subTree = {id: 3, label: "yay", branches: []};
+                    expect(treeForID(3, {label: "hi", branches: [subTree]})).toEqual(['Just', subTree]);
+
+                    expect(treeForID(97, root)).toEqual(['Just', rootGrandchildren[0]]);
+                });
+            });
+            describe("getParentID", function() {
+                it("for root subtree we should return nothing", function() {
+                    var rootSubtree = {id: 1, label: "I'm the root", branches: []};
+                    expect(getParentID(1, rootSubtree)).toBe('Nothing');
+                });
+                it("for grandchild of root it should return the child of the root", function() {
+                    expect(getParentID(124, root)).toEqual(['Just', 97]);
+                });
+            });
+        </script>
+    </body>
+</html> 

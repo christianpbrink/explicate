@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="static/global.css"/>
     <script type="text/javascript" src="static/underscore-min.js"></script>
     <script type="text/javascript" src="static/jquery-1.11.1.min.js"></script>
+
+    <script type="text/javascript" src="static/prelude.js"></script>
     <script type="text/javascript" src="static/explicate.js"></script>
 
     <script type="text/javascript" >
@@ -12,7 +14,7 @@
             var treeHtml = renderTree(demoTree);
             console.log(treeHtml);
             document.body.innerHTML += treeHtml;
-            changePos(0);
+            changePos(state['currentPos']);
         });
     </script>
 
