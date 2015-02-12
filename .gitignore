@@ -1,3 +1,4 @@
 .*.sw[a-z]
-.hsenv/*
+.cabal-sandbox/*
+cabal.sandbox.config
 oldcode
