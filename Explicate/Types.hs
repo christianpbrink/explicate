@@ -10,9 +10,13 @@ import Database.Groundhog.Postgresql
 
 
 data P
-   = P Text
+   = P {
+     proposition :: Text
+   }
   deriving (Show, Eq, Ord)
 
+data PGRef a = PGRef Integer
+data Stored a :: { ref :: PGRef a, val :: a }
 data Citation 
    = Citation { 
       url     :: Text
@@ -24,14 +28,16 @@ data Basis
    | Expl Explanation
 
 data Grounding
-   = Grounding (DefaultKey P) Basis
+   = Grounding (Stored P) (Stored Basis)
 
-data ExplanationAtom
-   = AtomText Text 
-   | AtomRef (DefaultKey P)
+--data ExplanationAtom
+--   = AtomText Text 
+--   | AtomRef (Stored P)
 
 data Explanation 
-   = Explanation [ExplanationAtom]
+   = Explanation {
+     explanation :: Text
+   } -- [ExplanationAtom]
 
 mkPersist defaultCodegenConfig [groundhog|
 - entity: P
