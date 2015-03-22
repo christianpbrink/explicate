@@ -1,0 +1,14 @@
+
+:set -XOverloadedStrings
+
+:load Main.hs
+:m + Opaleye.PGTypes
+:m + Settings
+
+:m + Explicate.Types.P
+:m + Explicate.Types.Explanation
+:m + Explicate.Types.Citation
+:m + Explicate.Types.Basis
+:m + Explicate.Types.Grounding
+
+:set prompt "> "
